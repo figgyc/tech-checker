@@ -3,6 +3,7 @@ const respBox = document.getElementById("resp");
 const noteBox = document.getElementById("notes");
 const wcBox = document.getElementById("wordcount");
 const ccBox = document.getElementById("charcount");
+const warning = document.getElementById("code-warning");
 
 let w = 11;
 let c = 0;
@@ -13,6 +14,8 @@ if (document.location.hash.length > 1 || document.location.search.length > 1) {
     c = sp.get("c") || 0;
     techBox.value = sp.get("t") || "";
     noteBox.value = sp.get("n") || "";
+
+    warning.classList.toggle("hidden", !sp.get("t"));
 }
 
 function check() {
@@ -25,7 +28,6 @@ function check() {
     if (techBox.value || noteBox.value) {
         window.location.hash = (new URLSearchParams({w, c, t: techBox.value, n: noteBox.value})).toString();
     } else {
-        console.log('e', techBox.value, noteBox.value)
         window.location.hash = '';
     }
 
@@ -48,4 +50,4 @@ function wc() {
 techBox.addEventListener("input", check);
 respBox.addEventListener("input", check);
 noteBox.addEventListener("input", check);
-check();
+wc();

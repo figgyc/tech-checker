@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" rel="stylesheet" />
-
+    <script async defer type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
@@ -16,6 +16,9 @@
     <noscript>
         <span class="invalid">Obviously this website requires Javascript.</span>
     </noscript>
+    <p id="code-warning" class="hidden">
+        Check you trust the tech code before typing a response!
+    </p>
     <input type="text" id="tech" placeholder="Tech" />
     <input type="text" id="resp" placeholder="Response" />
     <textarea id="notes" placeholder="Notes"></textarea>
@@ -50,9 +53,6 @@
         <pre><code>!(/[ilo01]/i).test(r)</code></pre>
         <p>Yes this website evals JavaScript from a textbox. Yes that is kinda stupid. If it's any consolation it is <a href="https://github.com/figgyc/tech-checker">open source</a>.</p>
     </details>
-
-    <script type="text/javascript" src="script.js"></script>
-
 </body>
 
 </html>

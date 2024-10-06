@@ -48,3 +48,8 @@ textarea {
 .hidden {
     display: none;
 }
+
+#code-warning {
+    font-weight: 700;
+    color: yellow;
+}
