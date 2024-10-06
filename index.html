@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>figgyc's stupid simple tech checker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <h1>
+        figgyc's stupid simple tech checker
+    </h1>
+    <noscript>
+        <span class="invalid">Obviously this website requires Javascript.</span>
+    </noscript>
+    <input type="text" id="tech" placeholder="Tech" />
+    <input type="text" id="resp" placeholder="Response" />
+    <textarea id="notes" placeholder="Notes"></textarea>
+    <p>
+        <span id="wordcount"></span> <span id="charcount"></span>
+    </p>
+
+    <details>
+        <summary><strong>Click for instructions</strong></summary>
+       
+        <p>
+            Basically this website lets you write a "check" (some boolean expression) in JavaScript and then type a string and see if it passes the check or not. <br>
+
+            This website is designed for "Ten Words of Wisdom" internet word games, where you have to write
+            a written response to some prompt. Often a "technical" restriction is placed on the response,
+            for example not being allowed to use certain words. Or something way more complicated than that. But you can use it for whatever.
+        </p>
+        </p>
+            <strong>How to write a tech check:</strong>
+            Type JavaScript in the top box, use the variable r to get the content of the response box. The bottom box is to write notes like a prompt.
+            If it returns false the response box turns red, if true it stays black. Also there's a word count.
+        </p>
+        <p>
+            <strong>Tip:</strong>
+            You can share links with a predefined tech. Change w=11 or c=0 for a custom word and/or character count, 0 is off.
+        </p>
+        <p>
+            <strong>Example (EWOW 10):</strong>
+            "You CANNOT use the letters I, L, and O in either uppercase or lowercase, 
+            and you CANNOT use the numbers 0 and 1."
+        </p>
+        <pre><code>!(/[ilo01]/i).test(r)</code></pre>
+        <p>Yes this website evals JavaScript from a textbox. Yes that is kinda stupid. If it's any consolation it is <a href="https://github.com/figgyc/tech-checker">open source</a>.</p>
+    </details>
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
